@@ -16,9 +16,10 @@ pipeline {
 
         stage('Run with PM2') {
             steps {
-                bat 'pm2 delete all || exit 0'     // Clean up any existing instances
-                bat 'pm2 start app.js --name myapp'
-                bat 'pm2 save'                     // Optional: saves process list
+                // Replace with your actual path to pm2.cmd if it's different
+                bat '"C:\\Users\\Rakshith\\AppData\\Roaming\\npm\\pm2.cmd" delete all || exit 0'
+                bat '"C:\\Users\\Rakshith\\AppData\\Roaming\\npm\\pm2.cmd" start app.js --name myapp'
+                bat '"C:\\Users\\Rakshith\\AppData\\Roaming\\npm\\pm2.cmd" save'
             }
         }
     }
