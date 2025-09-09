@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-username/my-node-app.git'
+                git 'https://github.com/rak2712/basic.git'
             }
         }
         stage('Install') {
