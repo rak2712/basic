@@ -14,9 +14,11 @@ pipeline {
             }
         }
 
-        stage('Run') {
+        stage('Run with PM2') {
             steps {
-                bat 'start /B npm start'  // Starts the app in background
+                bat 'pm2 delete all || exit 0'     // Clean up any existing instances
+                bat 'pm2 start app.js --name myapp'
+                bat 'pm2 save'                     // Optional: saves process list
             }
         }
     }
